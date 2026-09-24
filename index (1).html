@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Michael John Gigante</title>
+  <meta name="description" content="Michael John Gigante, political scientist studying Japanese domestic politics, immigration, and foreign policy. Ph.D. candidate, Schar School of Policy and Government, George Mason University." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=Albert+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green: #1f3329;
+      --green-deep: #182a21;
+      --on-green: #eceee8;
+      --on-green-soft: #a9bfa4;
+      --paper: #eceee8;
+      --paper-deep: #e1e5dc;
+      --ink: #1f3329;
+      --accent: #3f6b50;
+      --stone: #55625a;
+      --rule: #cdd3c9;
+      --serif: 'Newsreader', 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif;
+      --sans: 'Albert Sans', 'Helvetica Neue', Arial, sans-serif;
+      --measure: 36rem;
+      --gutter: clamp(1.5rem, 5vw, 4.5rem);
+    }
+
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+    body {
+      font-family: var(--serif);
+      font-optical-sizing: auto;
+      font-size: 1.1875rem;
+      line-height: 1.6;
+      color: var(--ink);
+      background: var(--paper);
+    }
+
+    a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+    a:hover { color: var(--ink); }
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+      outline: 2px solid var(--accent); outline-offset: 3px;
+    }
+
+    /* ── Hero ── */
+    .hero { background: var(--green); color: var(--on-green); }
+    .hero a { color: var(--on-green); }
+    .hero a:hover { color: #ffffff; }
+    .hero a:focus-visible { outline-color: var(--on-green-soft); }
+
+    .topbar {
+      display: flex; flex-wrap: wrap; gap: 0.75rem 2rem;
+      padding: 1.6rem var(--gutter);
+      font-family: var(--sans); font-size: 0.875rem;
+    }
+    .topbar a { text-decoration: none; }
+    .topbar a:hover { text-decoration: underline; }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+      gap: clamp(2rem, 5vw, 4.5rem);
+      align-items: end;
+      padding: clamp(2.5rem, 6vw, 5rem) var(--gutter) clamp(3rem, 6vw, 4.5rem);
+    }
+    .hero h1 {
+      font-weight: 300;
+      font-size: clamp(3.2rem, 6.6vw, 6.6rem);
+      line-height: 0.95;
+      letter-spacing: -0.025em;
+      margin-bottom: 2rem;
+    }
+    .hero h1 span { display: block; }
+    .hero h1 .last { font-style: italic; padding-left: 0.5em; }
+    .lead {
+      font-size: clamp(1.2rem, 1.8vw, 1.45rem); line-height: 1.45;
+      max-width: 32rem; margin-bottom: 1.4rem;
+    }
+    .role {
+      font-family: var(--sans); font-size: 0.9375rem; line-height: 1.55;
+      color: var(--on-green-soft); max-width: 30rem;
+    }
+    .hero-links {
+      margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 1.5rem;
+      font-family: var(--sans); font-size: 0.9375rem;
+    }
+    .hero figure { margin: 0; }
+    .hero img {
+      display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover;
+      border: 8px solid var(--paper);
+    }
+    .hero figcaption {
+      font-family: var(--sans); font-size: 0.8125rem; color: var(--on-green-soft);
+      margin-top: 0.7rem;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .hero h1 span, .hero .lead, .hero .role, .hero-links, .hero figure {
+        opacity: 0; transform: translateY(0.5rem);
+        animation: rise 0.9s cubic-bezier(.2,.7,.2,1) forwards;
+      }
+      .hero h1 .last { animation-delay: 0.1s; }
+      .hero .lead { animation-delay: 0.25s; }
+      .hero .role { animation-delay: 0.35s; }
+      .hero-links { animation-delay: 0.45s; }
+      .hero figure { animation-delay: 0.2s; animation-duration: 1.2s; }
+    }
+    @keyframes rise { to { opacity: 1; transform: none; } }
+
+    /* ── Sections ── */
+    .section {
+      display: grid;
+      grid-template-columns: minmax(10rem, 3fr) minmax(0, 8fr);
+      gap: 2rem clamp(2rem, 5vw, 5rem);
+      padding: clamp(3.5rem, 8vw, 6.5rem) var(--gutter);
+      border-top: 1px solid var(--rule);
+    }
+    .section > h2 {
+      font-weight: 400; font-size: 1.75rem; line-height: 1.15;
+      letter-spacing: -0.01em;
+      align-self: start; position: sticky; top: 2rem;
+    }
+    .section-body { max-width: 46rem; }
+    .prose p { max-width: var(--measure); }
+    .prose p + p { margin-top: 1.1em; }
+    .meta { font-family: var(--sans); font-size: 0.875rem; line-height: 1.55; color: var(--stone); }
+
+    /* ── Featured ── */
+    .featured { background: var(--green); color: var(--on-green); border-top: none; }
+    .featured .meta { color: var(--on-green-soft); }
+    .featured a { color: var(--on-green); }
+    .featured a:hover { color: #ffffff; }
+    .featured-title {
+      font-size: clamp(1.9rem, 3.6vw, 2.9rem); font-weight: 300; font-style: italic;
+      line-height: 1.12; letter-spacing: -0.01em; margin: 0.7rem 0 1.4rem; max-width: 38rem;
+    }
+    .featured-title a { text-decoration: none; }
+    .featured p.summary { max-width: var(--measure); }
+    .featured-link { display: inline-block; margin-top: 1.6rem; font-family: var(--sans); font-size: 0.9375rem; font-weight: 500; }
+
+    /* ── Dissertation ── */
+    .diss-title {
+      font-size: clamp(1.6rem, 3vw, 2.25rem); font-weight: 400; font-style: italic;
+      line-height: 1.2; margin-bottom: 0.9rem; max-width: 34rem;
+    }
+    .diss-intro { margin: 1.6rem 0 2.6rem; max-width: var(--measure); }
+    .papers { list-style: none; counter-reset: paper; }
+    .papers li {
+      counter-increment: paper;
+      display: grid; grid-template-columns: 2.75rem minmax(0, 1fr);
+      padding: 1.6rem 0; border-top: 1px solid var(--rule);
+    }
+    .papers li::before {
+      content: counter(paper);
+      font-size: 2rem; font-weight: 300; line-height: 1; color: var(--accent);
+    }
+    .papers h3, .pubs h3 { font-size: 1.1875rem; font-weight: 500; line-height: 1.35; margin-bottom: 0.4rem; }
+    .papers p { font-size: 1.0625rem; color: #34453b; max-width: var(--measure); }
+
+    /* ── Publications ── */
+    .pub-group + .pub-group { margin-top: 3.2rem; }
+    .pub-group > h3 {
+      font-family: var(--sans); font-size: 0.9375rem; font-weight: 500;
+      color: var(--stone); margin-bottom: 0.6rem;
+    }
+    .pubs { list-style: none; }
+    .pubs li {
+      display: grid; grid-template-columns: 4.5rem minmax(0, 1fr);
+      padding: 1.25rem 0; border-top: 1px solid var(--rule);
+    }
+    .year { font-family: var(--sans); font-size: 0.875rem; color: var(--stone); padding-top: 0.2rem; }
+    .pubs h3 a { color: inherit; text-decoration-color: var(--rule); }
+    .pubs h3 a:hover { color: var(--accent); text-decoration-color: currentColor; }
+    .cite { font-size: 1.0625rem; color: #34453b; }
+    .status { font-family: var(--sans); font-size: 0.8125rem; color: var(--accent); margin-left: 0.35rem; white-space: nowrap; }
+
+    /* ── CV ── */
+    .cv-line { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.75rem 1.5rem; }
+    .button {
+      display: inline-block; font-family: var(--sans); font-size: 0.9375rem; font-weight: 500;
+      color: var(--on-green); background: var(--green); text-decoration: none; border: none; cursor: pointer;
+      padding: 0.85rem 1.5rem; border-radius: 2px; min-height: 44px;
+    }
+    .button:hover { background: var(--accent); color: #ffffff; }
+
+    /* ── Contact ── */
+    .contact-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 3rem; }
+    .contact-aside .contact-email { font-size: clamp(1.4rem, 2.6vw, 1.9rem); font-weight: 300; line-height: 1.2; margin-bottom: 1.8rem; overflow-wrap: anywhere; }
+    .contact-aside h3 { font-family: var(--sans); font-size: 0.875rem; font-weight: 500; color: var(--stone); margin-bottom: 0.35rem; }
+    .contact-aside p { font-size: 1.0625rem; }
+    .contact-aside p + h3 { margin-top: 1.5rem; }
+
+    .contact-form { display: grid; gap: 1.1rem; }
+    .contact-form label { display: block; font-family: var(--sans); font-size: 0.875rem; font-weight: 500; color: var(--stone); margin-bottom: 0.35rem; }
+    .contact-form input, .contact-form textarea {
+      width: 100%; font: inherit; font-size: 1.0625rem; color: var(--ink);
+      background: #f6f7f3; border: 1px solid var(--rule); border-radius: 2px;
+      padding: 0.7rem 0.85rem;
+    }
+    .contact-form input:focus, .contact-form textarea:focus { border-color: var(--accent); }
+    .contact-form textarea { min-height: 9rem; resize: vertical; }
+    .form-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.1rem; }
+    .form-note { font-family: var(--sans); font-size: 0.8125rem; color: var(--stone); }
+    .form-sent {
+      font-family: var(--sans); font-size: 0.9375rem; color: var(--green);
+      background: var(--paper-deep); border: 1px solid var(--rule); padding: 0.8rem 1rem; border-radius: 2px;
+    }
+    .visually-hidden { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+    footer {
+      display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;
+      padding: 2rem var(--gutter);
+      background: var(--green-deep); color: var(--on-green-soft);
+      font-family: var(--sans); font-size: 0.8125rem;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; align-items: start; }
+      .hero figure { order: -1; }
+      .section { grid-template-columns: 1fr; }
+      .section > h2 { position: static; }
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      body { font-size: 1.0625rem; }
+      .hero img { border-width: 5px; }
+      .pubs li { grid-template-columns: 1fr; }
+      .year { padding: 0 0 0.25rem; }
+      .papers li { grid-template-columns: 2.1rem minmax(0, 1fr); }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <nav class="topbar" aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#featured">Featured</a>
+      <a href="#dissertation">Dissertation</a>
+      <a href="#publications">Publications</a>
+      <a href="#cv">CV</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="hero-grid">
+      <div>
+        <h1><span>Michael John</span><span class="last">Gigante</span></h1>
+        <p class="lead">I study mechanisms behind domestic politics, public perception on immigration, and how domestic politics affect state behavior.</p>
+        <p class="role">Ph.D. candidate in Political Science, Schar School of Policy and Government, George Mason University. Associate, The Asia Group.</p>
+        <div class="hero-links">
+          <a href="#publications">Read the research</a>
+          <a href="Gigante_CV_Academic.docx" download>Download CV</a>
+          <a href="#contact">Get in touch</a>
+        </div>
+      </div>
+      <figure>
+        <img src="gigante-research.jpg" alt="Michael John Gigante working on a laptop on a leather sofa in a café" width="1800" height="1350" fetchpriority="high" />
+      </figure>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="about">
+      <h2>About</h2>
+      <div class="section-body prose">
+        <p>I am a Ph.D. candidate in Political Science at George Mason University’s Schar School of Policy and Government and an Associate at The Asia Group, where I work on Japanese domestic politics, energy policy, and U.S.–Japan relations.</p>
+        <p>My research asks how public opinion, party competition, and the factions of the Liberal Democratic Party shape what Japan does on immigration and in the world. I work with mixed methods: survey experiments, quantitative analysis of legislative and party behavior, and interview fieldwork conducted in Japanese in Tokyo, Gunma, and Fukuoka.</p>
+        <p>My work appears in <em>International Migration Review</em>, the <em>Journal of Conflict Resolution</em>, <em>PS: Political Science &amp; Politics</em>, and <em>Foreign Affairs</em>. With Ming Wan, I am co-author of a Cambridge Element on LDP factional politics and Japan’s economic statecraft.</p>
+      </div>
+    </section>
+
+    <section class="section featured" id="featured">
+      <h2>Featured</h2>
+      <div class="section-body">
+        <p class="meta">Book with Ming Wan. Cambridge University Press, 2025.</p>
+        <p class="featured-title"><a href="https://www.cambridge.org/core/elements/abs/factional-politics-in-the-liberal-democratic-party/8EACFAC61BAF9B763956F5D63E55BD2F">Factional Politics in the Liberal Democratic Party: Explaining Change and Continuity in Japan’s Economic Statecraft</a></p>
+        <p class="summary">Why does Japan’s economic statecraft sometimes lurch in a new direction and then hold steady for years? Drawing on LDP faction membership data from 1961 to 2024, Ming Wan and I trace two cases: Japan’s sweeping sanctions on Russia after the 2022 invasion of Ukraine, and its decades-long strategy toward ASEAN. We argue that the balance of power among the party’s factions explains both the sudden shifts and the inertia that follows.</p>
+        <a class="featured-link" href="https://www.cambridge.org/core/elements/abs/factional-politics-in-the-liberal-democratic-party/8EACFAC61BAF9B763956F5D63E55BD2F">Read it on Cambridge Core</a>
+      </div>
+    </section>
+
+    <section class="section" id="dissertation">
+      <h2>Dissertation</h2>
+      <div class="section-body">
+        <p class="diss-title">Contested Spaces: Immigration and Domestic Politics in Japan</p>
+        <p class="meta">Chair: Justin Gest. Committee: Lucas Núñez and Naoru Koizumi.</p>
+        <p class="diss-intro">Japan’s population is shrinking and its foreign-born population is growing faster than ever. This three-paper dissertation examines how citizens and politicians respond: what Japanese voters believe about decline and immigration, why those beliefs differ so much from place to place, and how the party that governs Japan coordinates on policy after dismantling its own factions.</p>
+        <ol class="papers">
+          <li>
+            <div>
+              <h3>Demographic Shock? What Information about Decline Does and Doesn’t Do to Immigration and Fertility Attitudes in Japan</h3>
+              <p>A survey experiment testing whether information about population decline moves Japanese attitudes on immigration and fertility policy. It does, but unevenly: urban respondents and rural or older respondents respond in opposite directions.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>Geography, Demographics, and the Limits of Tolerance: Qualitative Evidence on Immigration and Fertility Attitudes in Japan</h3>
+              <p>Semi-structured interviews with about sixty residents of Tokyo, Ōizumi, and Fukuoka explain the split in the experiment. A community’s capacity to absorb newcomers, more than contact with them, shapes how people read immigration and demographic decline.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>Institutional Stickiness: Voting Behavior of Former Faction Members in the Liberal Democratic Party</h3>
+              <p>The LDP formally dissolved most of its factions in 2024. Using dyadic analysis of the 2021, 2024, and 2025 party presidential elections, with the Asō faction as a comparison case that never disbanded, this paper tests whether former faction ties still coordinate how members vote.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="publications">
+      <h2>Publications</h2>
+      <div class="section-body">
+
+        <div class="pub-group">
+          <h3>Book</h3>
+          <ul class="pubs">
+            <li>
+              <span class="year">2025</span>
+              <div>
+                <h3><a href="https://www.cambridge.org/core/elements/abs/factional-politics-in-the-liberal-democratic-party/8EACFAC61BAF9B763956F5D63E55BD2F"><em>Factional Politics in the Liberal Democratic Party: Explaining Change and Continuity in Japan’s Economic Statecraft</em></a></h3>
+                <p class="cite">With Ming Wan. Elements in Indo-Pacific Security, Cambridge University Press.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="pub-group">
+          <h3>Journal articles</h3>
+          <ul class="pubs">
+            <li>
+              <span class="year">2025</span>
+              <div>
+                <h3><a href="https://www.cambridge.org/core/journals/ps-political-science-and-politics/article/gray-area-population-aging-and-immigration-attitudes-in-japan/C910F70E1BE5DA2D40A3106DFC4D764A">Gray Area: Population Aging and Immigration Attitudes in Japan</a></h3>
+                <p class="cite">With Justin Gest. <em>PS: Political Science &amp; Politics</em>.</p>
+              </div>
+            </li>
+            <li>
+              <span class="year">2025</span>
+              <div>
+                <h3><a href="https://doi.org/10.1177/00220027251322900">The Rise and Fall of the Confucian Long Peace: A New Dataset for Analyzing Regional Conflict Management in East Asia (1598–1894)</a></h3>
+                <p class="cite">With Joshua Stone, Daniel Druckman, and Ming Wan. <em>Journal of Conflict Resolution</em>.</p>
+              </div>
+            </li>
+            <li>
+              <span class="year">2024</span>
+              <div>
+                <h3><a href="https://doi.org/10.1177/01979183241278613">Migrant Rights Protections and Their Implementation in 45 Countries</a></h3>
+                <p class="cite">Justin Gest, Michael Gigante, Neslihan Kaptanoğlu, Ian M. Kysel, and Lucas Núñez. <em>International Migration Review</em>.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="pub-group">
+          <h3>Book chapter</h3>
+          <ul class="pubs">
+            <li>
+              <span class="year">—</span>
+              <div>
+                <h3>Calculated Dependence: Party Politics and Ideological Shifts Driving Japan’s Foreign Policy Behavior</h3>
+                <p class="cite">With Ming Wan. Under contract.<span class="status">In final review</span></p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="pub-group">
+          <h3>Policy and public writing</h3>
+          <ul class="pubs">
+            <li>
+              <span class="year">2026</span>
+              <div>
+                <h3><a href="https://www.foreignaffairs.com/china/lessons-long-confucian-peace">The Lessons of the Long Confucian Peace</a></h3>
+                <p class="cite">With Joshua Stone, Daniel Druckman, and Ming Wan. <em>Foreign Affairs</em>, May 6.</p>
+              </div>
+            </li>
+            <li>
+              <span class="year">2026</span>
+              <div>
+                <h3><a href="https://theasiagroup.com/stabilizing-japans-healthcare-system-proposals-for-new-funding-sources/">Stabilizing Japan’s Healthcare System: Proposals for New Funding Sources</a></h3>
+                <p class="cite">With H. Anderson. Policy report, The Asia Group.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section" id="cv">
+      <h2>CV</h2>
+      <div class="section-body">
+        <div class="cv-line">
+          <a class="button" href="Gigante_CV_Academic.docx" download>Download CV</a>
+          <p class="meta">Publications, dissertation, fellowships, and research experience. A policy résumé is available on request.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <h2>Contact</h2>
+      <div class="section-body">
+        <div class="contact-grid">
+          <div class="contact-aside">
+            <p class="contact-email"><a href="mailto:mgigante@gmu.edu">mgigante@gmu.edu</a></p>
+            <h3>Affiliation</h3>
+            <p>Schar School of Policy and Government<br />George Mason University<br />Arlington, Virginia</p>
+            <h3>Working papers</h3>
+            <p>Drafts of dissertation papers are available on request.</p>
+          </div>
+          <form class="contact-form" action="https://formsubmit.co/mgigante@gmu.edu" method="POST">
+            <p class="form-sent" id="form-sent" role="status" hidden>Thanks, your message was sent. I’ll reply to the email address you gave.</p>
+            <input type="hidden" name="_subject" value="New message from your website" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_next" value="https://mgigante1225.github.io/?sent=1#contact" />
+            <div class="visually-hidden" aria-hidden="true">
+              <label for="honey">Leave this empty</label>
+              <input type="text" id="honey" name="_honey" tabindex="-1" autocomplete="off" />
+            </div>
+            <div class="form-row">
+              <div>
+                <label for="name">Your name</label>
+                <input type="text" id="name" name="name" autocomplete="name" required />
+              </div>
+              <div>
+                <label for="email">Your email</label>
+                <input type="email" id="email" name="email" autocomplete="email" required />
+              </div>
+            </div>
+            <div>
+              <label for="message">Message</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+            <div class="cv-line">
+              <button class="button" type="submit">Send message</button>
+              <p class="form-note">Your message comes straight to my inbox.</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 Michael John Gigante</span>
+    <span>mgigante1225.github.io</span>
+  </footer>
+
+<script>
+    if (new URLSearchParams(window.location.search).get('sent') === '1') {
+      var note = document.getElementById('form-sent');
+      if (note) note.hidden = false;
+    }
+  </script>
+</body>
+</html>
